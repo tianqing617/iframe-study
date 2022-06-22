@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Son</title>
+  </head>
+    <body>
+      <div class="container">
+       <p>hollyics-son</p>
+       <span id="message"></span>
+      </div>
+    </body>
+    <script>
+      window.addEventListener("message", receiveMessage, false);
+
+      function receiveMessage(event) {
+        console.log('son', event);
+        window.document.getElementById('message').innerHTML = event.data;
+      }
+    </script> 
+</html>

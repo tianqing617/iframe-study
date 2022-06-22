@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frame</title>
+  </head>
+    <body>
+      <div class="container">
+       <span>hollyics-frame</span>
+       <button onclick="handleClick(event)">发送消息</button>
+
+       <iframe name="son" src="./son.html"></iframe>
+      </div>  
+    </body>
+
+    <script>
+      function handleClick(event) {
+        // console.log('frame', event, window);
+
+        window.frames.son.postMessage('this message fromm frame!', '*');
+      }
+    </script>
+</html>

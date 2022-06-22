@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webview</title>
+    <style style="text/css">
+      .container {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .chat {
+        flex: 1;
+        background: #ccc;
+        overflow: auto;
+        background-image: linear-gradient(blue, pink);
+      }
+      .wall {
+        height: 9999px;
+      }
+      .text {
+        height: 300px;
+        line-height: 50px;
+        background: #666;
+        width: 100%;
+      }
+
+      .input-wrapper {
+        text-align: center;
+        background-color: yellowgreen;
+        line-height: 60px;
+        height: 60px;
+      }
+      .input-raise {
+        padding-bottom: 230px;
+      }
+    </style>
+  </head>
+    <body>
+      <div class="container">
+        <!-- 聊天记录 -->
+        <div class="chat">
+          <div class="wall">
+            <div class="text">
+              99999999992222221
+            </div>
+          </div>
+        </div>
+
+        <!-- 输入框 -->
+        <div id="inputWrapper" class="input-wrapper">
+          <input type="text" onfocus="myFunction()" onblur="myFunction2()">
+          <button onclick="test()">send</button>
+        </div>
+      </div>  
+    </body>
+
+    <script type="text/javascript">
+      function myFunction() {
+        console.log('my');
+        const inputWrapperEl = document.getElementById('inputWrapper');
+        inputWrapper.classList.add("input-raise");
+        // document.body.scrollTop = document.body.scrollHeight + 100;
+        // window.setInterval(function() {
+        //   console.log('my');
+        //   document.activeElement.scrollIntoView(true);
+        // }, 500);
+      }
+      function myFunction2() {
+        const inputWrapperEl = document.getElementById('inputWrapper');
+        inputWrapperEl.classList.remove('input-raise');
+      }
+
+      function test() {
+        console.log('test')
+        // window.scrollBy(100, 1000)
+        window.scrollTo(0, Math.max(this.scrollHieght - 1, 0))
+      }
+    </script>
+</html>
